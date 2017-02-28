@@ -112,6 +112,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\Webappdiagtest.pubxml" />
+    <Content Include="scripttotablestorage\script _enable_webapp_diagnostics.ps1" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
