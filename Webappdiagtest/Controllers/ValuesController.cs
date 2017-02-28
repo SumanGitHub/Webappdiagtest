@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Swashbuckle.Swagger.Annotations;
+using System.Diagnostics;
 
 namespace Webappdiagtest.Controllers
 {
@@ -12,9 +13,9 @@ namespace Webappdiagtest.Controllers
     {
         // GET api/values
         [SwaggerOperation("GetAll")]
-        public IEnumerable<string> Get()
+        public string Get()
         {
-            return new string[] { "value1", "value2" };
+            return "56";
         }
 
         // GET api/values/5
@@ -23,7 +24,13 @@ namespace Webappdiagtest.Controllers
         [SwaggerResponse(HttpStatusCode.NotFound)]
         public string Get(int id)
         {
-            return "value";
+
+            Trace.TraceError("Message-TraceError"); // Write an error message   
+            Trace.TraceWarning("Message-TraceWarning"); // Write a warning message
+            Trace.TraceInformation("Message-TraceInformation"); // Write an information message
+            Trace.WriteLine("Message-WriteLine"); // Write a verbose message
+
+            return "return get";
         }
 
         // POST api/values
